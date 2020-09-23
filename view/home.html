@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" type="image/ico" href="http://www.datatables.net/favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, user-scalable=no">
+	<title>Develop Scripts</title>
+	<link rel="stylesheet" type="text/css" href="/css/jquery.dataTables.css">
+	<link rel="stylesheet" type="text/css" href="/css/custom.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap.min.css">
+	
+	<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script type="text/javascript" language="javascript" src="/js/jquery.dataTables.js"></script>
+	<script type="text/javascript" language="javascript" class="init">
+		
+		$(document).ready(function() {
+			$('#table').DataTable( {
+				ajax: 'http://localhost:3000/projects',
+				lengthMenu: [[2, 4, 6, 10, 25, 50, -1], [2, 4, 6, 10, 25, 50, "All"]],
+				columns: [
+					{ title: "Project" },
+					{ title: "Title" },
+					{ title: "Description" },
+					{ title: "User" },
+					{ title: "Category" }
+				]
+			} );
+		} );
+	</script>
+</head>
+<body >
+	<div id="header">
+		Develop Scripts
+		<a id="logout" href='logout'>Logout</a>
+	</div>
+	<div id="container">
+		<h1>Projects</h1>
+		<table id="table" class="table table-striped table-bordered display" style="width:100%">
+		</table>
+	</div>
+	<div id="footer">
+		Copyright © 2020 Auctionsoftware.com. All rights reserved
+	</div>
+</body>
+</html>
